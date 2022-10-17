@@ -1,5 +1,6 @@
 
-helm repo add --username besartsulejmani@gmail.com --password ${GITHUB_REPO_TOKEN} ${SPARK_OPERATOR_HELM_REPO} ${SPARK_OPERATOR_HELM_REPO_LOCATION}
+helm repo add ${SPARK_OPERATOR_HELM_REPO} ${SPARK_OPERATOR_HELM_REPO_LOCATION}
+helm repo add ${DATALAKE_REPO} ${DATALAKE_REPO_LOCATION} --username besartsulejmani@gmail.com --password ${GITHUB_REPO_TOKEN} 
 helm package spark-operator.tgz -u -d .deploy
 helm repo index .
 

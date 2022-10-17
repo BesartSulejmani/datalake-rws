@@ -1,13 +1,7 @@
-SPARK_OPERATOR_HELM_REPO_LOCATION=https://googlecloudplatform.github.io/spark-on-k8s-operator
-SPARK_OPERATOR_HELM_CHART_RELEASE=sparkoperator
-SPARK_OPERATOR_HELM_REPO=spark-operator
-SPARK_OPERATOR_HELM_NAMESPACE=spark-operator
-SPARK_APPS_K8S_NAMESPACE=datalake-namespace
 
-helm repo list
-helm repo remove ${SPARK_OPERATOR_HELM_REPO}
-helm repo add ${SPARK_OPERATOR_HELM_REPO} ${SPARK_OPERATOR_HELM_REPO_LOCATION}
-helm repo update
+helm repo add --username besartsulejmani@gmail.com --password ${GITHUB_REPO_TOKEN} ${SPARK_OPERATOR_HELM_REPO} ${SPARK_OPERATOR_HELM_REPO_LOCATION}
+helm package spark-operator.tgz -u -d .deploy
+helm repo index .
 
 helm install ${SPARK_OPERATOR_HELM_CHART_RELEASE} \
     --namespace ${SPARK_OPERATOR_HELM_NAMESPACE} \

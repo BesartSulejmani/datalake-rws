@@ -2,7 +2,7 @@ SPARK_OPERATOR_HELM_REPO_LOCATION=https://googlecloudplatform.github.io/spark-on
 SPARK_OPERATOR_HELM_CHART_RELEASE=sparkoperator
 SPARK_OPERATOR_HELM_REPO=spark-operator
 SPARK_OPERATOR_HELM_NAMESPACE=spark-operator
-SPARK_APPS_K8S_NAMESPACE=spark-apps
+SPARK_APPS_K8S_NAMESPACE=datalake-namespace
 
 helm repo list
 helm repo remove ${SPARK_OPERATOR_HELM_REPO}
